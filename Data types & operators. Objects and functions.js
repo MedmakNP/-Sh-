@@ -101,10 +101,17 @@ class reviews {
 
 //Function
 
-function search() {
-    
+function search(searchQuery) {
+   let search = productList.filter(item => item.name.includes(searchQuery))
+   return search
 }
 
+ 
+function sortProducts(sortRule) {
+     
+  let c = productList.sort((a,b) => a[sortRule] - b[sortRule])
+  return c;
+}
 
 
 const productList = [new Product(1, 'shoes', 'no description', 1000, 'adidas', 'XS' , 57, [11,30,2023], [], ['shoes1.png','shoes2.png','shoes3.png']),
@@ -140,6 +147,10 @@ const reviewsList = [new reviews(1, 'James', 13, 'no', 5, 4, 3, 5 ),
 //productList[0].deleteReviews(2)
 //console.log(reviewsList)
 
-console.log(productList[0].getAverageRating())
+//console.log(productList[0].getAverageRating())
+ //const searchQuery = "shi"
+//console.log(search(searchQuery))
+//const sortRule = "price";
+//console.log(sortProducts(sortRule))
 
 //console.log(p1.getId())
